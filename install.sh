@@ -16,7 +16,7 @@ DEFAULT_DISK="32"
 DEFAULT_RAM="2048"
 DEFAULT_CORES="2"
 DEFAULT_TEMPLATE_STORAGE="local"
-TEMPLATE="debian-12-standard_12.7-1_amd64.tar.zst"
+TEMPLATE="debian-12-standard_12.12-1_amd64.tar.zst"
 
 # ---------- helpers ----------
 
