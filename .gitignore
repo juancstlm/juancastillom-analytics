@@ -1,0 +1,5 @@
+.env
+umami-db/
+backups/*.sql
+backups/*.sql.gz
+.DS_Store
