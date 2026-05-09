@@ -9,7 +9,6 @@ REPO_URL="https://github.com/juancstlm/juancastillom-analytics.git"
 INSTALL_DIR="/opt/juancastillom-analytics"
 
 # Defaults — override via prompts
-DEFAULT_VMID="200"
 DEFAULT_HOSTNAME="analytics"
 DEFAULT_STORAGE="local-lvm"
 DEFAULT_BRIDGE="vmbr0"
@@ -57,6 +56,7 @@ echo
 
 # ---------- prompts: container ----------
 
+DEFAULT_VMID=$(pvesh get /cluster/nextid 2>/dev/null || echo "200")
 ask VMID      "VMID"                "$DEFAULT_VMID"
 ask HOSTNAME  "Hostname"            "$DEFAULT_HOSTNAME"
 ask STORAGE   "Container storage"   "$DEFAULT_STORAGE"
@@ -74,8 +74,8 @@ else
   NET_CONFIG="name=eth0,bridge=$BRIDGE,ip=dhcp"
 fi
 
-if pct status "$VMID" >/dev/null 2>&1; then
-  die "VMID $VMID already exists. Pick a different VMID or destroy the existing one."
+if pct status "$VMID" >/dev/null 2>&1 || qm status "$VMID" >/dev/null 2>&1; then
+  die "VMID $VMID already in use. Pick a different VMID or destroy the existing one."
 fi
 
 ask_secret ROOT_PASSWORD "Root password for the new LXC"
