@@ -38,7 +38,7 @@ After the script finishes, jump to [step 4](#4-log-in-to-umami) to change the de
 
 ### 1. Create the Cloudflare Tunnel
 
-Cloudflare dashboard -> Zero Trust -> Networks -> Tunnels -> Create tunnel -> Cloudflared.
+Cloudflare dashboard -> Zero Trust -> Networks -> Connectors -> Create tunnel -> Cloudflared.
 
 Copy the tunnel token. Then under **Public Hostname** add:
 
