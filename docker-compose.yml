@@ -6,6 +6,8 @@ services:
       DATABASE_TYPE: postgresql
       APP_SECRET: ${APP_SECRET}
       TRACKER_SCRIPT_NAME: ${TRACKER_SCRIPT_NAME:-script}
+      MAXMIND_LICENSE_KEY: ${MAXMIND_LICENSE_KEY}
+      CLIENT_IP_HEADER: cf-connecting-ip
     depends_on:
       db:
         condition: service_healthy

@@ -27,7 +27,7 @@ Runs as three containers in one Docker Compose stack on a Proxmox LXC:
 Run this on the **Proxmox host** as root. It creates an unprivileged Debian 12 LXC, installs Docker, clones this repo, writes `.env`, and brings up the stack.
 
 ```bash
-bash -c "$(curl -fsSL https://raw.githubusercontent.com/juancstlm/juancastillom-analytics/main/install.sh)"
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/juancstlm/juancastillom-analytics/v1.0.0/install.sh)"
 ```
 
 You'll be prompted for VMID, hostname, storage, network, and the three secrets (`APP_SECRET` and `DB_PASSWORD` can be auto-generated; `TUNNEL_TOKEN` you paste from Cloudflare Zero Trust). Create the Cloudflare Tunnel **before** running the script so you have a token ready — see [step 1 below](#1-create-the-cloudflare-tunnel).

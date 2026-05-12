@@ -123,6 +123,7 @@ pct create "$VMID" "$DEFAULT_TEMPLATE_STORAGE:vztmpl/$TEMPLATE" \
   --memory "$RAM" \
   --rootfs "${STORAGE}:${DISK}" \
   --net0 "$NET_CONFIG" \
+  --nameserver "1.1.1.1 1.0.0.1" \
   --features "keyctl=1,nesting=1" \
   --unprivileged 1 \
   --onboot 1 \
